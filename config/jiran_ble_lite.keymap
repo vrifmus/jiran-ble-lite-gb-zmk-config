@@ -64,6 +64,9 @@
 
     combos {
         compatible = "zmk,combos";
+        COMBO(delete,        &kp DEL,        27 28,     DEFAULT)
+        COMBO(backspace,     &kp BSPC,       25 29,     DEFAULT)
+        COMBO(enter,         &kp RET,        29 30,     DEFAULT)
         COMBO(game,     &tog GAME,    0 52,    DEFAULT GAME)
         COMBO(tasks,    TSK_V,       16 17,    NAV)
     };
@@ -155,18 +158,18 @@
         num_layer {
 //         ╭───────┬───────┬───────┬───────┬───────┬───────╮                    ╭───────┬───────┬───────┬───────┬───────┬───────╮
 //         |       |       |       |       |       |       |                    |       |       |       |       |       |       |
-// ╭───────┤       |   ,   |   7   |   8   |   9   |       |                    |       |   7   |   8   |   9   |   ,   |       ├───────╮
-// |       |       |   .   |   4   |   5   |   6   |   _   |                    |   _   |   4   |   5   |   6   |   .   |       |       |
-// ╰───────┤       |   0   |   1   |   2   |   3   |       |                    |       |   1   |   2   |   3   |   0   |       ├───────╯
+// ╭───────┤   +   |   ,   |   7   |   8   |   9   |   *   |                    |       |   7   |   8   |   9   |       |       ├───────╮
+// |       |   -   |   0   |   4   |   5   |   6   |   /   |                    |       |   4   |   5   |   6   |   0   |       |       |
+// ╰───────┤   =   |   .   |   1   |   2   |   3   | NLCK  |                    |       |   1   |   2   |   3   |       |       ├───────╯
 //         ╰───────┴───────┴───────────────┼───────┼───────┼───────╮    ╭───────┼───────┼───────┼───────────────────────────────╯
 //                                         |       |       |       |    |       |       |       |
 //                                         ╰───────┴───────┴───────╯    ╰───────┴───────┴───────╯
             bindings = <
-        &trans  &trans     &trans  &trans  &trans  &trans                       &trans     &trans  &trans  &trans  &trans     &trans
-&trans  &trans  &kp COMMA  &kp N7  &kp N8  &kp N9  &trans                       &trans     &kp N7  &kp N8  &kp N9  &kp COMMA  &trans  &trans
-        &trans  &kp DOT    &kp N4  &kp N5  &kp N6  &kp SPACE                    &kp SPACE  &kp N4  &kp N5  &kp N6  &kp DOT    &trans
-        &trans  &kp N0     &kp N1  &kp N2  &kp N3  &trans                       &trans     &kp N1  &kp N2  &kp N3  &kp N0     &trans
-                                           &trans  &trans     &trans    &trans  &trans     &trans
+        &trans        &trans     &trans  &trans  &trans  &trans                             &trans  &trans  &trans  &trans  &trans     &trans
+&trans  &kp KP_PLUS   &kp COMMA  &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY                    &trans  &kp N7  &kp N8  &kp N9  &trans     &trans  &trans
+        &kp KP_MINUS  &kp N0     &kp N4  &kp N5  &kp N6  &kp KP_DIVIDE                      &trans  &kp N4  &kp N5  &kp N6  &kp N0     &trans
+        &kp EQUAL     &kp DOT    &kp N1  &kp N2  &kp N3  &kp KP_NLCK                        &trans  &kp N1  &kp N2  &kp N3  &trans     &trans
+                                                 &trans  &trans             &trans  &trans  &trans  &trans
             >;
         };
 
