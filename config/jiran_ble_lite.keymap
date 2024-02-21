@@ -68,8 +68,8 @@
         COMBO(backspace,    &kp BSPC,      28 29,    DEFAULT)
         COMBO(enter,        &kp RET,       29 30,    DEFAULT)
         COMBO(game,         &tog GAME,      0 52,    DEFAULT GAME)
-        COMBO(tasks,        TSK_V,         16 17,    NAV)
-        COMBO(goup,         &kp LA(UP),    41 42,    NAV)
+        COMBO(tasks,        TSK_V,         15 16,    NAV)
+        COMBO(goup,         &kp LA(UP),    40 41,    NAV)
     };
 
 //         ╭───────┬───────┬───────┬───────┬───────┬───────╮                    ╭───────┬───────┬───────┬───────┬───────┬───────╮
@@ -105,18 +105,18 @@
         nav_layer {
 //         ╭───────┬───────┬───────┬───────┬───────┬───────╮                    ╭───────┬───────┬───────┬───────┬───────┬───────╮
 //         |       |       |       |       |       |       |                    |       |       |       |       |       |       |
-// ╭───────┤       |  ESC  | TRMNL | <DESK | DESK> |       |                    |       | PG UP |  UP   | PG DN | SLCK  |       ├───────╮
+// ╭───────┤       |  ESC  | <DESK | DESK> | TRMNL |       |                    |       | PG UP |  UP   | PG DN | SLCK  |       ├───────╮
 // |       |       |  GUI  |  ALT  | CTRL  | SHIFT |  APP  |                    |  APP  | LEFT  | DOWN  | RIGHT | CLCK  | PRN S |       |
-// ╰───────┤       |       |       |       |       |       |                    |       | HOME  |  INS  |  END  | NLCK  |       ├───────╯
+// ╰───────┤       |       |  BCK  |  FWD  |       |       |                    |       | HOME  |  INS  |  END  | NLCK  |       ├───────╯
 //         ╰───────┴───────┴───────────────┼───────┼───────┼───────╮    ╭───────┼───────┼───────┼───────────────────────────────╯
 //                                         |       |       |       |    |       |       |       |
 //                                         ╰───────┴───────┴───────╯    ╰───────┴───────┴───────╯
             bindings = <
-        &trans   &trans    &trans    &trans      &trans         &trans                    &trans     &trans     &trans    &trans     &trans       &trans
-&trans  &trans   &kp ESC   TERM      DES_P       DES_N          &trans                    &trans     &kp PG_UP  &kp UP    &kp PG_DN  &kp SLCK     &trans     &trans
-        &trans   &kp LGUI  &kp LALT  &kp LCTRL   &kp LSHFT      &kp K_APP                 &kp K_APP  &kp LEFT   &kp DOWN  &kp RIGHT  &kp CLCK     &kp PSCRN
-        &trans   &trans    &trans    &kp K_BACK  &kp K_FORWARD  &trans                    &trans     &kp HOME   &kp INS   &kp END    &kp KP_NLCK  &trans
-                                                 &trans         &trans  &trans    &trans  &trans     &trans
+        &trans   &trans    &trans         &trans            &trans         &trans                       &trans     &trans     &trans    &trans     &trans       &trans
+&trans  &trans   &kp ESC   DES_P          DES_N             TERM           &trans                       &trans     &kp PG_UP  &kp UP    &kp PG_DN  &kp SLCK     &trans     &trans
+        &trans   &kp LGUI  &kp LALT       &kp LCTRL         &kp LSHFT      &kp K_APP                    &kp K_APP  &kp LEFT   &kp DOWN  &kp RIGHT  &kp CLCK     &kp PSCRN
+        &trans   &trans    &kp C_AC_BACK  &kp C_AC_FORWARD  &trans         &trans                       &trans     &kp HOME   &kp INS   &kp END    &kp KP_NLCK  &trans
+                                                            &trans         &trans     &trans    &trans  &trans     &trans
             >;
         };
 
